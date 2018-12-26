@@ -1,7 +1,6 @@
 package com.straylense.messenger;
 
 import java.util.Date;
-import java.util.UUID;
 import javax.annotation.PostConstruct;
 import javax.persistence.Entity;
 import org.springframework.hateoas.EntityLinks;
@@ -11,10 +10,9 @@ import org.springframework.stereotype.Component;
 @Component
 public class MessageEntity {
 
-
   private static EntityLinks entityLinks;
-  private UUID userId;
-  private UUID recipientId;
+  private String userId;
+  private String recipientId;
   private Date dateTime;
   private String message;
 
@@ -31,19 +29,19 @@ public class MessageEntity {
     String ignore = entityLinks.toString();
   }
 
-  public UUID getUserId() {
+  public String getUserId() {
     return userId;
   }
 
-  public void setUserId(UUID userId) {
+  public void setUserId(String userId) {
     this.userId = userId;
   }
 
-  public UUID getRecipientId() {
+  public String getRecipientId() {
     return recipientId;
   }
 
-  public void setRecipientId(UUID recipientId) {
+  public void setRecipientId(String recipientId) {
     this.recipientId = recipientId;
   }
 
